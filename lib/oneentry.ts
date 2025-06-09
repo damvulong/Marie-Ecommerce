@@ -1,7 +1,7 @@
 import { defineOneEntry } from "oneentry";
 
-import retrieveRefreshToken from "@/components/actions/auth/retrieveRefreshToken";
-import storeRefreshToken from "@/components/actions/auth/storeRefreshToken";
+import retrieveRefreshToken from "@/actions/auth/retrieveRefreshToken";
+import storeRefreshToken from "@/actions/auth/storeRefreshToken";
 
 export type ApiClientType = ReturnType<typeof defineOneEntry> | null;
 
@@ -31,7 +31,7 @@ async function setupApiClient(): Promise<ReturnType<typeof defineOneEntry>> {
       apiClient = defineOneEntry(apiUrl, {
         token: process.env.ONEENTRY_TOKEN, // Token for authentication
 
-        langCode: "en-US", // Language code for the API
+        langCode: "en_US", // Language code for the API
 
         auth: {
           refreshToken: refreshToken || undefined, // Use the retrieved refresh token or 'underfined'

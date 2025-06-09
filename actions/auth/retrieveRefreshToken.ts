@@ -1,6 +1,6 @@
-"use client";
+"use server";
 
-import { cookies } from "next/headers";
+import { cookies } from "@/node_modules/next/headers";
 
 export default async function retrieveRefreshToken() {
   const cookieStore = await cookies();
